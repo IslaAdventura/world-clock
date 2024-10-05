@@ -10,6 +10,18 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  let londonElement = document.querySelector("#london");
+  if (londonElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonTimeElement = londonElement.querySelector(".time");
+    let londonTime = moment().tz("Europe/London");
+
+    londonDateElement.innerHTML = londonTime.format("dddd, MMMM Do, YYYY");
+    londonTimeElement.innerHTML = londonTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
   let tokyoElement = document.querySelector("#tokyo");
   if (tokyoElement) {
     let tokyoDateElement = tokyoElement.querySelector(".date");
@@ -40,11 +52,12 @@ function updateCity(event) {
           <div class="time">${cityTime.format(
             "h:mm:ss"
           )}<small> ${cityTime.format("A")}</small></div>
-        </div>`;
+        </div>
+        <a href="index.html">✨Back to home page✨</a> `;
 }
-updateTime();
-setInterval(updateTime, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
-
 citiesSelectElement.addEventListener("change", updateCity);
+
+updateTime();
+setInterval(updateTime, 1000);
