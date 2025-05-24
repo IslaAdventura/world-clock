@@ -40,20 +40,39 @@ function updateCity(event) {
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+
+  let cityName;
+  if (event.target.value === "current") {
+    cityName = "Current Location";
+  } else {
+    cityName = cityTimeZone.split("/")[1];
+    if (cityName) {
+      cityName = cityName.replace(/_/g, " ");
+    }
+  }
+
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `<div class="city">
-          <div>
-            <h2>${cityName}</h2>
-            <div class="date">${cityTime.format("dddd, MMMM Do, YYYY")}</div>
-          </div>
 
-          <div class="time">${cityTime.format(
-            "h:mm:ss"
-          )}<small> ${cityTime.format("A")}</small></div>
+  citiesElement.innerHTML = `
+  <div class="single-city-view">
+      <div class="single-city-card">
+          <div class="single-city-content">
+              <h2>${cityName}</h2>
+              <div class="date">${cityTime.format("dddd, MMMM Do, YYYY")}</div>
+              <div class="time">${cityTime.format(
+                "h:mm:ss"
+              )}<small>${cityTime.format("A")}</small></div>
+          </div>
+      </div>
+
+      <div>
+         <a href="index.html" class="back-button">
+              Back to World Clock
+         </a>
         </div>
-        <a href="index.html">✨Back to home page✨</a> `;
+     </div>
+  `;
 }
 
 let citiesSelectElement = document.querySelector("#city");

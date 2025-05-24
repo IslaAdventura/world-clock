@@ -4,51 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
-    <title>World Clock - Stephanie Anderson</title>
+    <title>World Clock | Stephanie Anderson | Junior Developer</title>
   </head>
   <body>
+    <div class="background-pattern"></div>
     <div class="container">
-      <h1>World Cl🕛ck</h1>
-      <select id="city">
-        <option value="">Select a city...</option>
-        <option value="current">My current location timezone</option>
-        <option value="America/New_York">New York</option>
-        <option value="America/Los_Angeles">Los Angeles</option>
-        <option value="Asia/Tokyo">Tokyo</option>
-        <option value="Asia/Singapore">Singapore</option>
-        <option value="Asia/Shanghai">Shanghai</option>
-        <option value="Africa/Algiers">Algiers</option>
-        <option value="Africa/Johannesburg">Johannesburg</option>
-        <option value="Europe/London">London</option>
-        <option value="Europe/Tallinn">Tallinn</option>
-        <option value="America/Punta_Arenas">Punta Arenas</option>
-        <option value="Antarctica/South_Pole">South Pole</option>
-        <option value="Pacific/Galapagos">Galapagos</option>
-      </select>
-
+      <h1>
+        <span class="time-emoji">⏰</span>World Clock<span class="time-emoji"
+          >⏰</span
+        >
+      </h1>
+      <div class="dropdown-container">
+        <select id="city">
+          <option value="">✨ Select a city to explore</option>
+          <option value="current">📍 My current location timezone</option>
+          <option value="America/New_York">🇺🇸 New York</option>
+          <option value="America/Los_Angeles">🇺🇸 Los Angeles</option>
+          <option value="Asia/Tokyo">🇯🇵 Tokyo</option>
+          <option value="Asia/Singapore">🇸🇬 Singapore</option>
+          <option value="Asia/Shanghai">🇨🇳 Shanghai</option>
+          <option value="Africa/Algiers">🇩🇿 Algiers</option>
+          <option value="Africa/Johannesburg">🇿🇦 Johannesburg</option>
+          <option value="Europe/London">🇬🇧 London</option>
+          <option value="Europe/Tallinn">🇪🇪 Tallinn</option>
+          <option value="America/Punta_Arenas">🇨🇱 Punta Arenas</option>
+          <option value="Antarctica/South_Pole">🇦🇶 South Pole</option>
+          <option value="Pacific/Galapagos">🇪🇨 Galapagos</option>
+        </select>
+      </div>
       <div id="cities">
-        <div class="city" id="newYork">
-          <div>
-            <h2>New York</h2>
-            <div class="date"></div>
+        <div class="cities-grid">
+          <div class="city" id="newYork">
+            <div class="city-info">
+              <h2><span class="flag">🇺🇸</span>New York</h2>
+              <div class="date"></div>
+            </div>
+            <div class="time"></div>
           </div>
-          <div class="time"></div>
-        </div>
 
-        <div id="cities">
           <div class="city" id="london">
-            <div>
-              <h2>London</h2>
+            <div class="city-info">
+              <h2><span class="flag">🇬🇧</span>London</h2>
               <div class="date"></div>
             </div>
             <div class="time"></div>
           </div>
 
           <div class="city" id="tokyo">
-            <div>
-              <h2>Tokyo</h2>
+            <div class="city-info">
+              <h2><span class="flag">🇯🇵</span>Tokyo</h2>
               <div class="date"></div>
             </div>
             <div class="time"></div>
@@ -56,11 +69,13 @@
         </div>
       </div>
     </div>
+
     <footer>
       This project was coded by
       <a href="https://github.com/IslaAdventura" target="_blank"
         >Stephanie✨Anderson</a
-      >, is open-sourced on
+      >,<br />
+      is open-sourced on
       <a href="https://github.com/IslaAdventura/world-clock" target="_blank"
         >GitHub</a
       >, and hosted on
