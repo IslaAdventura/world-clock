@@ -7,7 +7,8 @@
 body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", serif;
+
   color: #333;
 }
 
@@ -87,8 +88,9 @@ h1 {
 
 select {
   width: 100%;
-  padding: 16px 20px;
-  font-size: 16px;
+  padding: 12px 20px;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
   font-weight: 500;
   border: 2px solid rgba(102, 126, 234, 0.2);
   border-radius: 16px;
@@ -162,7 +164,7 @@ select:hover {
 }
 
 .city-info h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 8px;
   display: flex;
@@ -170,14 +172,9 @@ select:hover {
   gap: 12px;
 }
 
-.flag {
-  font-size: 1.8rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
 .date {
-  color: #6b7280;
-  font-size: 0.95rem;
+  color: #dadce2;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 
@@ -185,24 +182,26 @@ select:hover {
   font-size: 2.5rem;
   font-weight: 700;
   color: #1f2937;
-  text-align: right;
+  text-align: center;
   line-height: 1;
 }
 
 .time small {
   font-size: 1rem;
   font-weight: 500;
-  color: #6b7280;
+  color: #babfc8;
   margin-left: 4px;
 }
 
 footer {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 40px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   color: white;
   text-align: center;
   padding: 30px 20px;
-  margin-top: 40px;
   border-radius: 16px;
   font-size: 16px;
   line-height: 1.6;
@@ -315,7 +314,7 @@ footer a:hover {
 
 .single-city-card .date {
   font-size: 1.2rem;
-  color: #6b7280;
+  color: #555a65;
   margin-bottom: 30px;
 }
 
